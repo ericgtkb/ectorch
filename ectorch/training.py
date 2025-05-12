@@ -81,6 +81,10 @@ class Trainer:
         return self._loss_func
 
     @property
+    def device(self) -> torch.device | str:
+        return self._device
+
+    @property
     def history(self) -> dict[str, list[float]]:
         return self._history
 

@@ -29,7 +29,8 @@ class EarlyStopping(Callback):
     def on_epoch_end(self, epoch: int):
         """Check for early stopping condition."""
         metric_value = self._trainer.history[self._target_metric][-1]
-        if metric_value < self._best_value - self._min_change:
+        if metric_value <= self._best_value - self._min_change:
+            print(f'{metric_value=} {self._best_value=} {self._min_change=} {self._best_value-self._min_change}')
             self._best_value = metric_value
             self._epoch_count = 0
         else:
