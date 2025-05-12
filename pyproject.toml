@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ectorch"
+version = "1.0"
+dependencies = [
+  "torch >=2.0.0",
+  "tqdm",
+  "numpy"
+]
+requires-python = ">=3.11"
+authors = [
+  {name = "Eric Chen", email = "ericgtkb@gmail.com"},
+]
+maintainers = [
+  {name = "Eric Chen", email = "ericgtkb@gmail.com"},
+]
+description = "A PyTorch training library."
+readme = "README.md"
+
+[project.optional-dependencies]
+accelerate = [
+  "accelerate",
+]
+
+test = [
+  "pytest",
+  "pytest-mock",
+  "pytest-cov",
+  "accelerate",
+  "scikit-learn",
+]
+
+all = [
+  "pytest",
+  "pytest-mock",
+  "pytest-cov",
+  "accelerate",
+  "scikit-learn",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "ectorch",
+]

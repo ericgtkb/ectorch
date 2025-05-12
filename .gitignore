@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+venv/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# IDE
+*.swp
+compile_commands.json
+
+# Build tools
+bin/
+build/
+
+# Project install
+/bin/
+/lib/
+/share/
+
+# Testing
+.coverage
+
+# Temp directories
+tmp/
+scripts/
+notebooks/
